@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  inotify:
+    image: inotify
+    build:
+      context: .
+      dockerfile: ./Dockerfile

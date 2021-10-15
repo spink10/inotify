@@ -1,0 +1,35 @@
+- name: Build an image with the command module for a remote docker host
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: create a dir if it does not exist
+      become: yes
+      file:
+        path: /opt/test
+        state: directory
+        owner: user1
+        group: user1
+        mode: '0755'
+      
+    - name: Copy directory from playbook to tmp
+      copy: 
+        src: "{{playbook_dir}}/files/"
+        dest: "/opt/test"
+        owner: user1
+        group: user1
+        mode: '0644'
+
+    - name: build the image
+      become: yes
+      command: docker build -t test1/test13 /opt/test
+
+    # - name: run the site in a docker container
+    #   docker:
+    #     name: /tmp/
+    #     image: "nameofImage:tag"
+    #     state: reloaded
+
+
+
+
