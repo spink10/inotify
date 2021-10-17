@@ -1,7 +1,7 @@
 #!/bin/bash
-watchdir=/root/watchthisdir/
-logfile=/root/watchthisdir/watchlog.txt
-outputdir=/tmp
+watchdir=/opt/watchthisdir/
+logfile=/opt/scripts/watchthisoutput.log
+outputdir=/opt/scripts/
 while : ; do
         inotifywait $watchdir|while read path action file; do
                 ts=$(date +"%C%y%m%d%H%M%S")

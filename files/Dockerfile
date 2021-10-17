@@ -1,6 +1,7 @@
 # FROM centos:centos7.9.2009
-FROM spink10/inotify
+FROM spink10/inotify:1.5
 LABEL Name=inotify Version=0.0.1
+ADD inotify.sh /opt/scripts
 # RUN mkdir -p /etc/scripts/
 # RUN yum install -y gcc make wget
 # RUN wget --no-check-certificate http://jensd.be/download/inotify-tools-3.14.tar.gz
