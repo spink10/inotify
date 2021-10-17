@@ -22,5 +22,5 @@ main.yml
 this play builds the image and then starts the container running the inotify shell script monitoring a preconfigured directory inside the container itself.
 
 REQUIREMENTS:
-a user 'user1'
+a user 'user1' and
 docker engine installed
