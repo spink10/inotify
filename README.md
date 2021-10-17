@@ -13,3 +13,10 @@ $logfile - the location and name of desired output logfile
 $outputdir - the location of the resulting compressed archive of files
 
 Dockerfile - this is the dockerfile which builds the docker image on the docker host. Currently it pulls the 1.5 version from docker hub spink10 repository. 
+
+
+
+
+Playbooks:
+main.yml 
+this play builds the image and then starts the container running the inotify shell script monitoring a preconfigured directory inside the container itself.
