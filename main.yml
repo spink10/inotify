@@ -8,25 +8,28 @@
       file:
         path: /opt/test
         state: directory
-        owner: user1
-        group: user1
+        # owner: user1
+        # group: user1
         mode: '0755'
-      
+
+
+      #this play copies the Dockerfile to the host in order to build
     - name: Copy directory from playbook to tmp of the docker host
       copy: 
         src: "{{playbook_dir}}/files/"
         dest: "/opt/test"
-        owner: user1
-        group: user1
+        # owner: user1
+        # group: user1
         mode: '0644'
 
+      #this builds a docker image from an already built up and slightly customized centos7 image
     - name: build the image
       become: yes
-      command: docker build -t test1/test13 /opt/test
+      command: docker build -t localspink10/localinotify /opt/test
 
-    - name: start the the container with a command, without docker module
+    - name: start the the container with a command, without docker ansible module
       become: yes
-      command: docker run -d --name itnofqwf2 test1/test13 /opt/scripts/inotify.sh
+      command: docker run -d --name inotify localspink10/localinotify /opt/scripts/inotify.sh
 
     # - name: Start a container with a command
     #   docker_container:
@@ -41,6 +44,8 @@
     #     name: /tmp/
     #     image: "nameofImage:tag"
     #     state: reloaded
+
+
 
 
 
