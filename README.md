@@ -20,3 +20,7 @@ Dockerfile - this is the dockerfile which builds the docker image on the docker 
 Playbooks:
 main.yml 
 this play builds the image and then starts the container running the inotify shell script monitoring a preconfigured directory inside the container itself.
+
+REQUIREMENTS:
+a user 'user1'
+docker engine installed
