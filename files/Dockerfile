@@ -1,5 +1,5 @@
 # FROM centos:centos7.9.2009
-FROM spink10/inotify:1.1
+FROM spink10/inotify
 LABEL Name=inotify Version=0.0.1
 # RUN mkdir -p /etc/scripts/
 # RUN yum install -y gcc make wget
